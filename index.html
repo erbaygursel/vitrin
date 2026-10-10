@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erbay Gürsel · Vitrin</title>
+<meta name="description" content="Matematik ve algoritmaları görsel anlatan kısa animasyonlar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --kraft: #ede3d1;
+    --kart: #f7f1e5;
+    --antrasit: #2b2a28;
+    --soluk: #6b655b;
+    --sari: #f2c230;
+    --cizgi: #d6cab3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--kraft) radial-gradient(ellipse at top, #f4ecdd 0%, var(--kraft) 60%) no-repeat;
+    color: var(--antrasit);
+    font: 16px/1.6 Inter, system-ui, sans-serif;
+  }
+  main { max-width: 1080px; margin: 0 auto; padding: 56px 16px 72px; }
+
+  .etiket {
+    display: inline-block;
+    font: 600 12px/1 "JetBrains Mono", monospace;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    background: var(--antrasit);
+    color: var(--kraft);
+    padding: 6px 10px;
+    border-radius: 999px;
+  }
+  h1 {
+    font: 800 clamp(40px, 7vw, 72px)/1.05 Fraunces, Georgia, serif;
+    margin: 20px 0 16px;
+    letter-spacing: -.02em;
+  }
+  .vurgu { background: linear-gradient(transparent 58%, var(--sari) 58%, var(--sari) 90%, transparent 90%); }
+  .giris { max-width: 620px; font-size: 18px; color: var(--soluk); margin: 0; }
+  .baglantilar { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .baglantilar a {
+    font: 500 14px/1 "JetBrains Mono", monospace;
+    color: var(--antrasit);
+    text-decoration: none;
+    border: 1.5px solid var(--antrasit);
+    padding: 9px 14px;
+    border-radius: 8px;
+  }
+  .baglantilar a:hover { background: var(--antrasit); color: var(--kraft); }
+
+  h2 {
+    font: 600 28px/1.2 Fraunces, Georgia, serif;
+    margin: 64px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px dashed var(--cizgi);
+  }
+  .izgara { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .kart {
+    background: var(--kart);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 0 var(--cizgi), 0 10px 24px -14px rgba(43, 42, 40, .35);
+  }
+  .kart.genis { grid-column: 1 / -1; }
+  video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--antrasit); }
+  .bilgi { padding: 16px 18px 20px; }
+  .bilgi h3 { font: 600 21px/1.25 Fraunces, Georgia, serif; margin: 0 0 6px; }
+  .bilgi p { margin: 0 0 12px; color: var(--soluk); font-size: 15px; }
+  .araclar { display: flex; gap: 6px; flex-wrap: wrap; }
+  .araclar span {
+    font: 400 12px/1 "JetBrains Mono", monospace;
+    border: 1px dashed var(--soluk);
+    color: var(--soluk);
+    padding: 5px 8px;
+    border-radius: 6px;
+  }
+  footer {
+    margin-top: 72px;
+    font: 400 13px/1.6 "JetBrains Mono", monospace;
+    color: var(--soluk);
+  }
+  @media (max-width: 720px) {
+    main { padding-top: 36px; }
+    .izgara { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="etiket">Vitrin</span>
+    <h1>Matematiği <span class="vurgu">görerek</span> anlatmak.</h1>
+    <p class="giris">Ben Erbay; matematikçiyim. Algoritmaları ve kavramları kısa animasyonlarla anlatmayı deniyorum.
+      Videoların hepsi kodla üretildi: Manim, HyperFrames ve three.js.</p>
+    <nav class="baglantilar">
+      <a href="https://github.com/erbaygursel">GitHub</a>
+      <a href="https://www.linkedin.com/in/erbay-gursel/">LinkedIn</a>
+    </nav>
+  </header>
+
+  <h2>Animasyonlar</h2>
+  <section class="izgara">
+    <article class="kart genis">
+      <video controls preload="none" playsinline poster="kapaklar/ykds-tanitim.jpg" src="videolar/ykds-tanitim.mp4"></video>
+      <div class="bilgi">
+        <h3>YKDS Çalışma Defteri — tanıtım</h3>
+        <p>50 saniyede 7 bölüm. Salatalık maskot, perde / iris / yakınlaşma geçişleri, Türkçe seslendirme ve altyazı.</p>
+        <div class="araclar"><span>HyperFrames</span><span>GSAP</span><span>edge-tts</span><span>50 sn</span></div>
+      </div>
+    </article>
+
+    <article class="kart">
+      <video controls preload="none" playsinline poster="kapaklar/ikili-arama.jpg" src="videolar/ikili-arama.mp4"></video>
+      <div class="bilgi">
+        <h3>İkili arama</h3>
+        <p>Sıralı listede aranan sayıyı her adımda yarıyı atarak bulmak.</p>
+        <div class="araclar"><span>HyperFrames</span><span>10 sn</span></div>
+      </div>
+    </article>
+
+    <article class="kart">
+      <video controls preload="none" playsinline poster="kapaklar/bellek-hiyerarsisi.jpg" src="videolar/bellek-hiyerarsisi.mp4"></video>
+      <div class="bilgi">
+        <h3>Bellek hiyerarşisi 3D</h3>
+        <p>Yazmaçtan diske: her katmanın hızı, boyutu ve teknolojisi bir piramitte.</p>
+        <div class="araclar"><span>three.js</span><span>HyperFrames</span><span>72 sn</span></div>
+      </div>
+    </article>
+
+    <article class="kart">
+      <video controls preload="none" playsinline poster="kapaklar/derleyici-manim.jpg" src="videolar/derleyici-manim.mp4"></video>
+      <div class="bilgi">
+        <h3>Derleyici nasıl çalışır?</h3>
+        <p>Kaynak koddan makine koduna giden yol, Manim ile.</p>
+        <div class="araclar"><span>Manim</span><span>19 sn</span></div>
+      </div>
+    </article>
+
+    <article class="kart">
+      <video controls preload="none" playsinline poster="kapaklar/ykds-hyperframes.jpg" src="videolar/ykds-hyperframes.mp4"></video>
+      <div class="bilgi">
+        <h3>YKDS — hareketli grafik</h3>
+        <p>İlk HyperFrames denemesi: üç sahnelik kısa tanıtım.</p>
+        <div class="araclar"><span>HyperFrames</span><span>10 sn</span></div>
+      </div>
+    </article>
+
+    <article class="kart">
+      <video controls preload="none" playsinline poster="kapaklar/simit.jpg" src="videolar/simit.mp4"></video>
+      <div class="bilgi">
+        <h3>Bir simidin günü</h3>
+        <p>Sabahtan akşama beş saniyelik küçük bir hikâye.</p>
+        <div class="araclar"><span>HyperFrames</span><span>GSAP</span><span>5 sn</span></div>
+      </div>
+    </article>
+  </section>
+
+  <footer>© 2026 Erbay Gürsel</footer>
+</main>
+</body>
+</html>
