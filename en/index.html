@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erbay Gürsel · Showcase</title>
+<meta name="description" content="Short animations that explain mathematics and algorithms visually.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='9' y='2' width='14' height='28' rx='7' fill='%2356a13b' stroke='%232b2a28' stroke-width='2'/%3E%3Ccircle cx='14' cy='10' r='1.3' fill='%232b2a28'/%3E%3Ccircle cx='18' cy='16' r='1.3' fill='%232b2a28'/%3E%3Ccircle cx='14' cy='22' r='1.3' fill='%232b2a28'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://erbaygursel.github.io/vitrin/en/">
+<link rel="alternate" hreflang="tr" href="https://erbaygursel.github.io/vitrin/">
+<link rel="alternate" hreflang="en" href="https://erbaygursel.github.io/vitrin/en/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://erbaygursel.github.io/vitrin/en/">
+<meta property="og:title" content="Erbay Gürsel · Explaining math you can see">
+<meta property="og:description" content="Short, code-generated animations that explain mathematics and algorithms visually.">
+<meta property="og:image" content="https://erbaygursel.github.io/vitrin/kapaklar/bayes.jpg">
+<meta property="og:image:width" content="960">
+<meta property="og:image:height" content="540">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../stil.css">
+</head>
+<body>
+<main>
+  <header>
+    <span class="etiket">Showcase</span>
+    <h1>Explaining math you can <span class="vurgu">see</span>.</h1>
+    <p class="giris">I'm Erbay, a mathematician. I explain algorithms and concepts through short animations.
+      Every video is generated with code: HyperFrames, Canvas and three.js. Narration is in Turkish, with on-screen subtitles.</p>
+    <nav class="baglantilar">
+      <a href="https://github.com/erbaygursel">GitHub</a>
+      <a href="https://www.linkedin.com/in/erbay-gursel/">LinkedIn</a>
+      <a class="dil" href="../" hreflang="tr" lang="tr">Türkçe</a>
+    </nav>
+  </header>
+
+  <h2>Animations</h2>
+  <section class="izgara">
+    <article class="kart genis">
+      <video controls preload="none" playsinline aria-labelledby="bayes" poster="../kapaklar/bayes.jpg" src="../videolar/bayes.mp4"></video>
+      <div class="bilgi">
+        <h3 id="bayes">You tested positive. Are you sick?</h3>
+        <p>Bayes' theorem with 10,000 dots: even if a test is 90% accurate, when the disease is rare a positive result means only a 15% chance of being sick. Example numbers, not medical advice.</p>
+        <p class="nasil">How: all 10,000 dots are drawn on a single Canvas with seeded random numbers; every figure was checked in Python first. Scenes are timed from the narration and rendered frame by frame with HyperFrames.</p>
+        <div class="araclar"><span>HyperFrames</span><span>Canvas</span><span>edge-tts</span><span>95 s</span></div>
+      </div>
+    </article>
+
+    <article class="kart genis">
+      <video controls preload="none" playsinline aria-labelledby="ykds-tanitim" poster="../kapaklar/ykds-tanitim.jpg" src="../videolar/ykds-tanitim.mp4"></video>
+      <div class="bilgi">
+        <h3 id="ykds-tanitim">YKDS Workbook — trailer</h3>
+        <p>Seven sections in 50 seconds for an exam-prep workbook. A cucumber mascot, curtain / iris / zoom transitions, narration and subtitles.</p>
+        <p class="nasil">How: transitions are computed from time; overlapping GSAP animations were hiding the curtain, and that is how it was fixed. Narration with edge-tts, silences trimmed with ffmpeg.</p>
+        <div class="araclar"><span>HyperFrames</span><span>GSAP</span><span>edge-tts</span><span>50 s</span></div>
+      </div>
+    </article>
+
+    <article class="kart">
+      <video controls preload="none" playsinline aria-labelledby="ikili-arama" poster="../kapaklar/ikili-arama.jpg" src="../videolar/ikili-arama.mp4"></video>
+      <div class="bilgi">
+        <h3 id="ikili-arama">Binary search</h3>
+        <p>Finding a number in a sorted list by discarding half of it at every step.</p>
+        <p class="nasil">Why: the algorithm's one requirement is "the list must be sorted"; the discarded half is drawn as a dashed box, and the closing stamp stresses that requirement.</p>
+        <div class="araclar"><span>HyperFrames</span><span>10 s</span></div>
+      </div>
+    </article>
+
+    <article class="kart">
+      <video controls preload="none" playsinline aria-labelledby="bellek-hiyerarsisi" poster="../kapaklar/bellek-hiyerarsisi.jpg" src="../videolar/bellek-hiyerarsisi.mp4"></video>
+      <div class="bilgi">
+        <h3 id="bellek-hiyerarsisi">Memory hierarchy in 3D</h3>
+        <p>From registers to disk: the speed, size and technology of every layer in one pyramid.</p>
+        <p class="nasil">How: a three.js scene rendered frame by frame with HyperFrames; each layer's duration is computed from the narration.</p>
+        <div class="araclar"><span>three.js</span><span>HyperFrames</span><span>72 s</span></div>
+      </div>
+    </article>
+  </section>
+
+  <footer>© 2026 Erbay Gürsel</footer>
+</main>
+</body>
+</html>
