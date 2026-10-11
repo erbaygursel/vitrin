@@ -1,10 +1,12 @@
 # Vitrin — çalışma kuralları
 
-Erbay Gürsel'in matematik ve algoritma animasyonlarını sergileyen tek sayfalık site.
+Erbay Gürsel'in matematik ve algoritma animasyonlarını sergileyen statik site (Türkçe + İngilizce).
 Yayın: GitHub Pages, `main` dalından → https://erbaygursel.github.io/vitrin/
 
 ## Yapı
-- `index.html` — sitenin tamamı. Derleme adımı, paket, framework yok; CSS sayfanın içinde.
+- `index.html` — Türkçe sayfa (ana sayfa).
+- `en/index.html` — İngilizce sayfa; aynı kartlar, aynı sıra. Dosya yolları `../` ile başlar.
+- `stil.css` — iki sayfanın ortak stili. Derleme adımı, paket, framework yok.
 - `videolar/<ad>.mp4` — işlenmiş videolar.
 - `kapaklar/<ad>.jpg` — her videonun kapak görseli. Dosya adı videoyla aynı.
 - `README.md` — GitHub'da görünen tablo; siteyle aynı videoları listeler.
@@ -14,13 +16,13 @@ Animasyonların kaynak kodu (HyperFrames, three.js, Canvas projeleri) bu depoda 
 buraya yalnızca bitmiş video gelir.
 
 ## Dil ve üslup
-- Her şey Türkçe: sayfa metni, commit mesajları, dosya adları (küçük harf, tire, Türkçe karakter yok: `ikili-arama`).
+- Türkçe esas: sayfa metni, commit mesajları, dosya adları (küçük harf, tire, Türkçe karakter yok: `ikili-arama`).
 - Kısa ve somut yaz. Kart açıklaması 1–2 cümle; abartı sıfatı yok.
 - Her kartta bir `p.nasil` satırı var: "Nasıl:" (teknik yöntem) ya da "Neden:" (anlatım tercihi) ile başlar.
   Videoyu izleyenin göremeyeceği bir şeyi söylemeli.
 
 ## Tasarım (değiştirme, yeniden kullan)
-- Renkler `:root` değişkenlerinde: `--kraft` arka plan, `--kart`, `--antrasit` metin, `--soluk`, `--sari` vurgu, `--cizgi`.
+- Renkler `stil.css` içindeki `:root` değişkenlerinde: `--kraft` arka plan, `--kart`, `--antrasit` metin, `--soluk`, `--sari` vurgu, `--cizgi`.
   Yeni renk ekleme; gerekiyorsa önce sor.
 - Yazı tipleri: başlıklar Fraunces, gövde Inter, etiket ve kod JetBrains Mono.
 - Izgara 2 sütun, 720 px altında tek sütun. Uzun ya da öne çıkan videolar `kart genis` (tam genişlik).
@@ -34,9 +36,9 @@ buraya yalnızca bitmiş video gelir.
 
 ```html
 <article class="kart">
-  <video controls preload="none" playsinline poster="kapaklar/AD.jpg" src="videolar/AD.mp4"></video>
+  <video controls preload="none" playsinline aria-labelledby="AD" poster="kapaklar/AD.jpg" src="videolar/AD.mp4"></video>
   <div class="bilgi">
-    <h3>Başlık</h3>
+    <h3 id="AD">Başlık</h3>
     <p>Videonun anlattığı şey, 1–2 cümle.</p>
     <p class="nasil">Nasıl: …</p>
     <div class="araclar"><span>Araç</span><span>NN sn</span></div>
@@ -44,8 +46,11 @@ buraya yalnızca bitmiş video gelir.
 </article>
 ```
 
-3. `README.md` tablosuna aynı sırayla bir satır ekle (kapak 240 px, başlık, süre, araçlar).
-4. Kontrol: `python3 -m http.server` ile sayfayı açıp videonun oynadığını ve kapağın göründüğünü doğrula.
+3. Aynı kartı İngilizce çevirisiyle `en/index.html` içine aynı sıraya ekle: yollar `../kapaklar/`, `../videolar/`,
+   "Nasıl:" → "How:", "Neden:" → "Why:", süre "NN s". İki sayfanın kart sayısı ve sırası her zaman aynı olmalı.
+4. `<video>` etiketinde `aria-labelledby="AD"`, başlıkta `<h3 id="AD">` olsun (erişilebilirlik).
+5. `README.md` tablosuna aynı sırayla bir satır ekle (kapak 240 px, başlık, süre, araçlar).
+6. Kontrol: `python3 -m http.server` ile sayfayı açıp videonun oynadığını ve kapağın göründüğünü doğrula.
 
 ## Sınırlar
 - Video başına hedef 15 MB'ın altı. GitHub 100 MB'tan büyük dosyayı reddeder; 50 MB üstü uyarı verir.
