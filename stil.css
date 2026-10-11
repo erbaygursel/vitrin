@@ -42,6 +42,8 @@ h1 {
   border-radius: 8px;
 }
 .baglantilar a:hover { background: var(--antrasit); color: var(--kraft); }
+.baglantilar a.birincil { background: var(--antrasit); color: var(--kraft); }
+.baglantilar a.birincil:hover { background: var(--sari); color: var(--antrasit); border-color: var(--antrasit); }
 a:focus-visible, video:focus-visible { outline: 3px solid var(--sari); outline-offset: 3px; }
 .dil { margin-left: auto; }
 
@@ -72,6 +74,10 @@ video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--ant
   padding: 5px 8px;
   border-radius: 6px;
 }
+.ders .bilgi { padding: 22px 24px 24px; }
+.ders .bilgi p { font-size: 16px; max-width: 640px; }
+.ders .baglantilar { margin-top: 16px; }
+
 footer {
   margin-top: 72px;
   font: 400 13px/1.6 "JetBrains Mono", monospace;
